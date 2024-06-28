@@ -14,9 +14,12 @@ public class AddJobViewModel
       public int EmployerId { get; set; }
     public List<SelectListItem> Employers{ get; set; }
 
+    
     public AddJobViewModel(List<Employer> employerList)
     {
         // https://github.com/LaunchCodeEducation/CodingEvents/blob/authentication/CodingEvents/ViewModels/AddEventViewModel.cs
+
+        Employers = new List<SelectListItem>();
 
         foreach(Employer employer in employerList)
         {
@@ -30,4 +33,8 @@ public class AddJobViewModel
         }
     }
 
+     public AddJobViewModel()
+    {
+    }
+    
 }
