@@ -4,7 +4,7 @@
 
 --Part 1: List the columns and their data types in the Jobs table.
 
--- 
+-- Id int AI PK (auto incremented primary key), Name longtext 4,294,967,295 characters) , EmployerId int
 
 --Part 2: Write a query to list the names of the employers in St. Louis City.
 
