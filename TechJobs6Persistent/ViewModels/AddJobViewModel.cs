@@ -12,11 +12,22 @@ public class AddJobViewModel
 
     [Required(ErrorMessage ="Employer ID is required.")]
       public int EmployerId { get; set; }
-    public List<SelectListItem> Employers { get; set; }
+    public List<SelectListItem> Employers{ get; set; }
 
-    public AddJobViewModel()
+    public AddJobViewModel(List<Employer> employerList)
     {
-        Employers = new List<SelectListItem>();
+        // https://github.com/LaunchCodeEducation/CodingEvents/blob/authentication/CodingEvents/ViewModels/AddEventViewModel.cs
+
+        foreach(Employer employer in employerList)
+        {
+            Employers.Add(
+                new SelectListItem
+                {
+                    Value = employer.Id.ToString(),
+                    Text = employer.Name,
+                }
+            );
+        }
     }
 
 }
