@@ -22,6 +22,15 @@ namespace TechJobs6Persistent.Data
             modelBuilder.Entity<Job>().HasOne(p => p.Employer).WithMany(b => b.Jobs);
 
             //set up your connection for many to many (skills to jobs)
+
+            // https://github.com/LaunchCodeEducation/CodingEvents/blob/authentication/CodingEvents/Data/EventDbContext.cs
+
+            modelBuilder
+                .Entity<Job>()
+                .HasMany(p => p.Skills)
+                .WithMany(b => b.Jobs)
+                .UsingEntity(j => j.ToTable("jobskill"));
+                base.OnModelCreating(modelBuilder);
         }
     }
 }

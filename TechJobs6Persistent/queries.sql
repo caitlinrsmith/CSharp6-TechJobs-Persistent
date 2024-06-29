@@ -16,7 +16,8 @@
     --If a skill does not have a job listed, it should not be included in the results of this query.
 
 -- SELECT Name, SkillName 
--- FROM jobskill
+-- FROM Techjobs.jobskill
 -- INNER JOIN jobs ON jobs.Id = jobskill.JobsId
--- INNER JOIN skills ON skills.Id = jobskill.SkillsId
--- ORDER BY SkillName;
+-- INNER JOIN skills ON skills.Id = TechJobs.jobskill.SkillsId
+-- WHERE jobs.Id IS NOT NULL
+-- ORDER BY TechJobs.Skills.SkillName;
